@@ -1,0 +1,6 @@
+framework module Pods_GymeFit {
+  umbrella header "Pods-GymeFit-umbrella.h"
+
+  export *
+  module * { export * }
+}
