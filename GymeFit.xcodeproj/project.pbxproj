@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2124AA871F8A842300068410 /* CommodityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA7E1F8A842200068410 /* CommodityViewController.swift */; };
+		2124AA881F8A842300068410 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA7F1F8A842200068410 /* LoginViewController.swift */; };
+		2124AA891F8A842300068410 /* FitnessCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA801F8A842200068410 /* FitnessCourseViewController.swift */; };
+		2124AA8A1F8A842300068410 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA811F8A842200068410 /* MainViewController.swift */; };
+		2124AA8B1F8A842300068410 /* BulletinBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA821F8A842200068410 /* BulletinBoardViewController.swift */; };
+		2124AA8C1F8A842300068410 /* MemberInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA831F8A842200068410 /* MemberInfoViewController.swift */; };
+		2124AA8D1F8A842300068410 /* TrainingManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA841F8A842200068410 /* TrainingManageViewController.swift */; };
+		2124AA8E1F8A842300068410 /* GymeFitLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */; };
+		2124AA8F1F8A842300068410 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA861F8A842300068410 /* MainNavigationViewController.swift */; };
 		21C0EC591F89E74E007CBF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0EC581F89E74E007CBF01 /* AppDelegate.swift */; };
-		21C0EC5B1F89E74E007CBF01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0EC5A1F89E74E007CBF01 /* ViewController.swift */; };
 		21C0EC5E1F89E74E007CBF01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC5C1F89E74E007CBF01 /* Main.storyboard */; };
 		21C0EC601F89E74E007CBF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC5F1F89E74E007CBF01 /* Assets.xcassets */; };
 		21C0EC631F89E74E007CBF01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC611F89E74E007CBF01 /* LaunchScreen.storyboard */; };
@@ -16,9 +24,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2124AA7E1F8A842200068410 /* CommodityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommodityViewController.swift; sourceTree = "<group>"; };
+		2124AA7F1F8A842200068410 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2124AA801F8A842200068410 /* FitnessCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessCourseViewController.swift; sourceTree = "<group>"; };
+		2124AA811F8A842200068410 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2124AA821F8A842200068410 /* BulletinBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinBoardViewController.swift; sourceTree = "<group>"; };
+		2124AA831F8A842200068410 /* MemberInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoViewController.swift; sourceTree = "<group>"; };
+		2124AA841F8A842200068410 /* TrainingManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingManageViewController.swift; sourceTree = "<group>"; };
+		2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymeFitLoginViewController.swift; sourceTree = "<group>"; };
+		2124AA861F8A842300068410 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		21C0EC551F89E74E007CBF01 /* GymeFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymeFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C0EC581F89E74E007CBF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21C0EC5A1F89E74E007CBF01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		21C0EC5D1F89E74E007CBF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21C0EC5F1F89E74E007CBF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21C0EC621F89E74E007CBF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,8 +77,16 @@
 		21C0EC571F89E74E007CBF01 /* GymeFit */ = {
 			isa = PBXGroup;
 			children = (
+				2124AA821F8A842200068410 /* BulletinBoardViewController.swift */,
+				2124AA7E1F8A842200068410 /* CommodityViewController.swift */,
+				2124AA801F8A842200068410 /* FitnessCourseViewController.swift */,
+				2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */,
+				2124AA7F1F8A842200068410 /* LoginViewController.swift */,
+				2124AA861F8A842300068410 /* MainNavigationViewController.swift */,
+				2124AA811F8A842200068410 /* MainViewController.swift */,
+				2124AA831F8A842200068410 /* MemberInfoViewController.swift */,
+				2124AA841F8A842200068410 /* TrainingManageViewController.swift */,
 				21C0EC581F89E74E007CBF01 /* AppDelegate.swift */,
-				21C0EC5A1F89E74E007CBF01 /* ViewController.swift */,
 				21C0EC5C1F89E74E007CBF01 /* Main.storyboard */,
 				21C0EC5F1F89E74E007CBF01 /* Assets.xcassets */,
 				21C0EC611F89E74E007CBF01 /* LaunchScreen.storyboard */,
@@ -234,8 +258,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C0EC5B1F89E74E007CBF01 /* ViewController.swift in Sources */,
+				2124AA8E1F8A842300068410 /* GymeFitLoginViewController.swift in Sources */,
+				2124AA8B1F8A842300068410 /* BulletinBoardViewController.swift in Sources */,
+				2124AA8C1F8A842300068410 /* MemberInfoViewController.swift in Sources */,
+				2124AA891F8A842300068410 /* FitnessCourseViewController.swift in Sources */,
+				2124AA881F8A842300068410 /* LoginViewController.swift in Sources */,
+				2124AA8F1F8A842300068410 /* MainNavigationViewController.swift in Sources */,
+				2124AA871F8A842300068410 /* CommodityViewController.swift in Sources */,
+				2124AA8D1F8A842300068410 /* TrainingManageViewController.swift in Sources */,
 				21C0EC591F89E74E007CBF01 /* AppDelegate.swift in Sources */,
+				2124AA8A1F8A842300068410 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
