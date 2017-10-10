@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if (FBSDKAccessToken.current() != nil) {
-            print("performSegue")
             self.fetchProfile()
         } else {
             fbLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
@@ -45,8 +44,6 @@ class LoginViewController: UIViewController {
     }
     
     private func fetchProfile() {
-        print("attempt to fetch profile......")
-        
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
         
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: {
@@ -60,9 +57,6 @@ class LoginViewController: UIViewController {
                         let data = picture["data"] as? NSDictionary,
                         let pictureURL = data["url"] as? String {
                         self.fbUserInfo = UserInfo(firstName: userInfo["first_name"] as? String, lastName: userInfo["last_name"] as? String, email: userInfo["email"]  as? String, userPhotoURL: pictureURL)
-                        print("login info set finish")
-                        //AppDelegate.fbUserInfo = UserInfo()
-                        //AppDelegate.fbUserInfo = self.fbUserInfo
                     }
                 }
             }
@@ -78,7 +72,6 @@ class LoginViewController: UIViewController {
             if let mainvc = segue.destination as? MainViewController {
                 mainvc.fbUserInfo = UserInfo()
                 mainvc.fbUserInfo = self.fbUserInfo
-                print("pass data")
             }
         }
     }
