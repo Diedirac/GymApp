@@ -1,6 +1,6 @@
 //
 //  MemberInfoViewController.swift
-//  GymeFitApp
+//  GymeFit
 //
 //  Created by Chuan Yen Fu on 2017/9/14.
 //  Copyright © 2017年 Chuan-Yen Fu. All rights reserved.
@@ -10,7 +10,6 @@ import UIKit
 import FBSDKLoginKit
 
 class MemberInfoViewController: UIViewController {
-    
     @IBOutlet weak var memberPhoto: UIImageView!
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
@@ -27,25 +26,23 @@ class MemberInfoViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 1.0, green: 0.4, blue: 0.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        let manvc = self.tabBarController as! MainViewController
         
-        if let userInfo = AppDelegate.fbUserInfo {
-            if let userPicture = userInfo["picture"] as? NSDictionary, let pdata = userPicture["data"] as? NSDictionary, let url = pdata["url"] as? String {
-                var userImage: UIImage?
-                let userPhotoURL = URL(string: url)!
-                let dtinternet = NSData(contentsOf: userPhotoURL)
-                userImage = UIImage(data: dtinternet! as Data)
-                memberPhoto.image = userImage
-            }
-            
-            if let firstname = userInfo["first_name"] as? String, let lastname = userInfo["last_name"] as? String {
-                userName.text = firstname + " " + lastname
-            }
-            
-            if let email = userInfo["email"] as? String {
-                userEmail.text = email
-            }
+        if let PicURL = manvc.fbUserInfo?.userPhotoURL {
+            var userImage: UIImage?
+            let userPhotoURL = URL(string: PicURL)!
+            let dtinternet = NSData(contentsOf: userPhotoURL)
+            userImage = UIImage(data: dtinternet! as Data)
+            memberPhoto.image = userImage
         }
-        // Do any additional setup after loading the view.
+        
+        if let firstname = manvc.fbUserInfo?.firstName, let lastname = manvc.fbUserInfo?.lastName {
+            userName.text = firstname + " " + lastname
+        }
+        
+        if let email = manvc.fbUserInfo?.email {
+            userEmail.text = email
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,11 +57,14 @@ class MemberInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logOut(_ sender: UIButton) {
-        let logoutManager = FBSDKLoginManager()
-        logoutManager.logOut()
+    @IBAction func memberLogout(_ sender: Any) {
+        if(FBSDKAccessToken.current() != nil){
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+        
+        self.performSegue(withIdentifier: "toLoginMenu", sender: self)
     }
-    
     /*
     // MARK: - Navigation
 

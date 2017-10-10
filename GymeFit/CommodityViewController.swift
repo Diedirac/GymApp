@@ -1,6 +1,6 @@
 //
 //  CommodityViewController.swift
-//  GymeFitApp
+//  GymeFit
 //
 //  Created by Chuan Yen Fu on 2017/9/14.
 //  Copyright © 2017年 Chuan-Yen Fu. All rights reserved.

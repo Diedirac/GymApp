@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h44-DQ-9eL">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,7 +14,7 @@
         <!--訓練教學-->
         <scene sceneID="Jm1-3B-PLE">
             <objects>
-                <viewController id="w03-Fz-S8Z" customClass="FitnessCourseViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w03-Fz-S8Z" customClass="FitnessCourseViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3F0-Sz-mB4"/>
                         <viewControllerLayoutGuide type="bottom" id="1pc-2O-aCw"/>
@@ -43,7 +44,7 @@
         <!--近期動態-->
         <scene sceneID="UJ4-u5-Z4G">
             <objects>
-                <viewController id="wYW-Gx-dlM" customClass="BulletinBoardViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wYW-Gx-dlM" customClass="BulletinBoardViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ze7-dF-395"/>
                         <viewControllerLayoutGuide type="bottom" id="Eos-pY-pNF"/>
@@ -73,7 +74,7 @@
         <!--專屬商品-->
         <scene sceneID="gkm-4m-rm9">
             <objects>
-                <viewController id="qc3-MK-C2D" customClass="CommodityViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qc3-MK-C2D" customClass="CommodityViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5In-7K-Y19"/>
                         <viewControllerLayoutGuide type="bottom" id="ErD-Ji-xbB"/>
@@ -103,7 +104,7 @@
         <!--個人資料-->
         <scene sceneID="0tt-Ic-cWS">
             <objects>
-                <viewController id="RMY-ck-t3d" customClass="MemberInfoViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RMY-ck-t3d" customClass="MemberInfoViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dv7-xV-xyy"/>
                         <viewControllerLayoutGuide type="bottom" id="cKK-iU-NB0"/>
@@ -115,7 +116,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELY-aI-MYH">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-Nr-e9l">
+                                    <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-Nr-e9l">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screentone" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-1Z-jpq">
@@ -189,6 +190,9 @@
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="memberLogout:" destination="RMY-ck-t3d" eventType="touchUpInside" id="NEe-fo-Po9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,16 +243,18 @@
                         <outlet property="photoButton" destination="zVj-vK-smK" id="TJs-Od-bVf"/>
                         <outlet property="userEmail" destination="l1w-s8-RFF" id="TRz-CG-qJz"/>
                         <outlet property="userName" destination="del-ST-6hz" id="x82-kn-m9D"/>
+                        <segue destination="2gG-Qe-Hly" kind="unwind" identifier="toLoginMenu" unwindAction="unwindsegueToLoginMenuWithUnwindSegue:" id="XEB-Ad-Ilv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p28-bb-AVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2gG-Qe-Hly" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="321" y="896"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hpT-K5-nx9">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h44-DQ-9eL" customClass="LoginViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h44-DQ-9eL" customClass="LoginViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i0c-MK-F4l"/>
                         <viewControllerLayoutGuide type="bottom" id="icg-cm-Ql9"/>
@@ -271,7 +277,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EDm-sd-r08">
                                 <rect key="frame" x="97" y="386.66666666666674" width="220" height="299.33333333333326"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSi-pX-p7t">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSi-pX-p7t" userLabel="fbLoginButton">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Ahu-Di-mcd">
@@ -283,15 +289,15 @@
                                         </constraints>
                                         <state key="normal" image="FacebookLogin"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wq-bV-43s">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wq-bV-43s" userLabel="googlePlusLoginButton">
                                         <rect key="frame" x="0.0" y="90" width="220" height="59.333333333333314"/>
                                         <state key="normal" image="GoogleLogin"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-xb-G5L">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-xb-G5L" userLabel="gymeFitLoginButton">
                                         <rect key="frame" x="0.0" y="179.33333333333331" width="220" height="60"/>
                                         <state key="normal" image="GymefitLogin"/>
                                         <connections>
-                                            <segue destination="0fS-HZ-mr9" kind="show" id="vS8-NO-Afq"/>
+                                            <segue destination="0fS-HZ-mr9" kind="show" identifier="toGymeFitLoginMenu" id="vS8-NO-Afq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-zJ-ZIy">
@@ -333,7 +339,7 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="KSi-pX-p7t" id="Xae-qL-ZSk"/>
-                        <segue destination="rtH-iU-2Gx" kind="presentation" identifier="fbtoMainView" id="hwr-YS-XYM"/>
+                        <segue destination="rtH-iU-2Gx" kind="show" identifier="toMainMenu" id="r4H-LJ-Lnn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6t-Sg-gNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,7 +349,7 @@
         <!--GymeFit-->
         <scene sceneID="emC-V4-qsZ">
             <objects>
-                <tabBarController storyboardIdentifier="mainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rtH-iU-2Gx" customClass="MainViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rtH-iU-2Gx" customClass="MainViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="GymeFit" id="CBQ-Im-gol"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DiS-MQ-Kc4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -365,7 +371,7 @@
         <!--Gyme Fit Login View Controller-->
         <scene sceneID="BTh-8W-bUT">
             <objects>
-                <viewController id="0fS-HZ-mr9" customClass="GymeFitLoginViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0fS-HZ-mr9" customClass="GymeFitLoginViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9BF-Sq-Xts"/>
                         <viewControllerLayoutGuide type="bottom" id="Ncm-Du-I8V"/>
@@ -581,12 +587,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5z-jo-N9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704" y="-1600"/>
+            <point key="canvasLocation" x="-704" y="-1602"/>
         </scene>
         <!--訓練管理-->
         <scene sceneID="HZI-EX-HNn">
             <objects>
-                <viewController id="P3a-6d-hjI" customClass="TrainingManageViewController" customModule="GymeFitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P3a-6d-hjI" customClass="TrainingManageViewController" customModule="GymeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oDu-ur-b3U"/>
                         <viewControllerLayoutGuide type="bottom" id="XqK-oP-pYy"/>
@@ -696,7 +702,7 @@
         <image name="Weight" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hwr-YS-XYM"/>
+        <segue reference="r4H-LJ-Lnn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

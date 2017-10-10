@@ -1,6 +1,6 @@
 //
 //  LoginViewController.swift
-//  GymeFitApp
+//  GymeFit
 //
 //  Created by Chuan Yen Fu on 2017/9/14.
 //  Copyright © 2017年 Chuan-Yen Fu. All rights reserved.
@@ -10,13 +10,20 @@ import UIKit
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
-
     @IBOutlet weak var fbLoginButton: UIButton!
+    var fbUserInfo: UserInfo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fbLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (FBSDKAccessToken.current() != nil) {
+            print("performSegue")
+            self.fetchProfile()
+        } else {
+            fbLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,14 +41,10 @@ class LoginViewController: UIViewController {
             }
             
             self.fetchProfile()
-            
-            if FBSDKAccessToken.current() != nil {
-                self.performSegue(withIdentifier: "fbtoMainView", sender: nil)
-            }
         }
     }
     
-    func fetchProfile() {
+    private func fetchProfile() {
         print("attempt to fetch profile......")
         
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
@@ -50,31 +53,38 @@ class LoginViewController: UIViewController {
             (connection, result, error) -> Void in
             
             if error != nil {
-                print("登入失敗")
                 print("longinerror =\(error?.localizedDescription ?? "unknown")")
             } else {
-                if let userInfo = result as? [String:Any] {
-                    AppDelegate.fbUserInfo = userInfo
-                    
-                    print("成功登入")
-                    
-                    let email = userInfo["email"]  as! String
-                    print(email)
-                    
-                    let firstName = userInfo["first_name"] as! String
-                    print(firstName)
-                    
-                    let lastName = userInfo["last_name"] as! String
-                    print(lastName)
-                    
+                if let userInfo = result as? NSDictionary {
                     if let picture = userInfo["picture"] as? NSDictionary,
                         let data = picture["data"] as? NSDictionary,
-                        let url = data["url"] as? String {
-                        print(url)
+                        let pictureURL = data["url"] as? String {
+                        self.fbUserInfo = UserInfo(firstName: userInfo["first_name"] as? String, lastName: userInfo["last_name"] as? String, email: userInfo["email"]  as? String, userPhotoURL: pictureURL)
+                        print("login info set finish")
+                        //AppDelegate.fbUserInfo = UserInfo()
+                        //AppDelegate.fbUserInfo = self.fbUserInfo
                     }
                 }
             }
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toMainMenu", sender: self)
+            }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMainMenu" {
+            if let mainvc = segue.destination as? MainViewController {
+                mainvc.fbUserInfo = UserInfo()
+                mainvc.fbUserInfo = self.fbUserInfo
+                print("pass data")
+            }
+        }
+    }
+    
+    @IBAction func unwindsegueToLoginMenu(unwindSegue: UIStoryboardSegue) {
+        
     }
 
     /*

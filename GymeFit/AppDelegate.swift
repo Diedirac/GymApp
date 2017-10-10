@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  GymeFitApp
+//  GymeFit
 //
 //  Created by Chuan Yen Fu on 2017/9/14.
 //  Copyright © 2017年 Chuan-Yen Fu. All rights reserved.
@@ -10,45 +10,21 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+struct UserInfo {
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var userPhotoURL: String?
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static var fbUserInfo: [String:Any]?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         sleep(1)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        var initialViewController: UIViewController
-        
-        if(FBSDKAccessToken.current() != nil){
-            
-            let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
-            
-            FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: {
-                (connection, result, error) -> Void in
-                
-                if error != nil {
-                    print("longinerror =\(error?.localizedDescription ?? "unknown")")
-                } else {
-                    if let userInfo = result as? [String:Any] {
-                        AppDelegate.fbUserInfo = userInfo
-                    }
-                }
-            })
-                
-            let vc = mainStoryboard.instantiateViewController(withIdentifier: "mainViewController") as! MainViewController
-            initialViewController = vc
-        } else {
-            initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
-        }
-        
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
         return true
     }
     
