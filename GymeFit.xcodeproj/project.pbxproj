@@ -15,7 +15,6 @@
 		2124AA8C1F8A842300068410 /* MemberInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA831F8A842200068410 /* MemberInfoViewController.swift */; };
 		2124AA8D1F8A842300068410 /* TrainingManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA841F8A842200068410 /* TrainingManageViewController.swift */; };
 		2124AA8E1F8A842300068410 /* GymeFitLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */; };
-		2124AA8F1F8A842300068410 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124AA861F8A842300068410 /* MainNavigationViewController.swift */; };
 		21C0EC591F89E74E007CBF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0EC581F89E74E007CBF01 /* AppDelegate.swift */; };
 		21C0EC5E1F89E74E007CBF01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC5C1F89E74E007CBF01 /* Main.storyboard */; };
 		21C0EC601F89E74E007CBF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC5F1F89E74E007CBF01 /* Assets.xcassets */; };
@@ -32,7 +31,6 @@
 		2124AA831F8A842200068410 /* MemberInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoViewController.swift; sourceTree = "<group>"; };
 		2124AA841F8A842200068410 /* TrainingManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingManageViewController.swift; sourceTree = "<group>"; };
 		2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymeFitLoginViewController.swift; sourceTree = "<group>"; };
-		2124AA861F8A842300068410 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		21C0EC551F89E74E007CBF01 /* GymeFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymeFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C0EC581F89E74E007CBF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C0EC5D1F89E74E007CBF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				2124AA801F8A842200068410 /* FitnessCourseViewController.swift */,
 				2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */,
 				2124AA7F1F8A842200068410 /* LoginViewController.swift */,
-				2124AA861F8A842300068410 /* MainNavigationViewController.swift */,
 				2124AA811F8A842200068410 /* MainViewController.swift */,
 				2124AA831F8A842200068410 /* MemberInfoViewController.swift */,
 				2124AA841F8A842200068410 /* TrainingManageViewController.swift */,
@@ -263,7 +260,6 @@
 				2124AA8C1F8A842300068410 /* MemberInfoViewController.swift in Sources */,
 				2124AA891F8A842300068410 /* FitnessCourseViewController.swift in Sources */,
 				2124AA881F8A842300068410 /* LoginViewController.swift in Sources */,
-				2124AA8F1F8A842300068410 /* MainNavigationViewController.swift in Sources */,
 				2124AA871F8A842300068410 /* CommodityViewController.swift in Sources */,
 				2124AA8D1F8A842300068410 /* TrainingManageViewController.swift in Sources */,
 				21C0EC591F89E74E007CBF01 /* AppDelegate.swift in Sources */,

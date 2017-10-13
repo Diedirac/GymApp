@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if (FBSDKAccessToken.current() != nil) {
-            self.fetchProfile()
+            self.fetchProfileSegue()
         } else {
             fbLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
         }
@@ -39,20 +39,18 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            self.fetchProfile()
+            self.fetchProfileSegue()
         }
     }
     
-    private func fetchProfile() {
+    private func fetchProfileSegue() {
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
         
-        FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: {
-            (connection, result, error) -> Void in
-            
-            if error != nil {
-                print("longinerror =\(error?.localizedDescription ?? "unknown")")
+        FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler:) {
+            if $2 != nil {
+                print("longinerror =\($2?.localizedDescription ?? "unknown")")
             } else {
-                if let userInfo = result as? NSDictionary {
+                if let userInfo = $1 as? NSDictionary {
                     if let picture = userInfo["picture"] as? NSDictionary,
                         let data = picture["data"] as? NSDictionary,
                         let pictureURL = data["url"] as? String {
@@ -61,10 +59,8 @@ class LoginViewController: UIViewController {
                 }
             }
             
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "toMainMenu", sender: self)
-            }
-        })
+            self.performSegue(withIdentifier: "toMainMenu", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
