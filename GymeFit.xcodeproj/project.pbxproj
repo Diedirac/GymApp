@@ -19,6 +19,7 @@
 		21C0EC5E1F89E74E007CBF01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC5C1F89E74E007CBF01 /* Main.storyboard */; };
 		21C0EC601F89E74E007CBF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC5F1F89E74E007CBF01 /* Assets.xcassets */; };
 		21C0EC631F89E74E007CBF01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C0EC611F89E74E007CBF01 /* LaunchScreen.storyboard */; };
+		BC8803CC1F90893700CD83EA /* SignInAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8803CB1F90893700CD83EA /* SignInAuth.swift */; };
 		D343D58571755280B64D92C7 /* Pods_GymeFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613346C03D5F193DBDE37669 /* Pods_GymeFit.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		21C0EC641F89E74E007CBF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		613346C03D5F193DBDE37669 /* Pods_GymeFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymeFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A259727C435F33B30DA8DF8 /* Pods-GymeFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymeFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GymeFit/Pods-GymeFit.debug.xcconfig"; sourceTree = "<group>"; };
+		BC8803CB1F90893700CD83EA /* SignInAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAuth.swift; sourceTree = "<group>"; };
 		BD2B3F9670699FA301A06009 /* Pods-GymeFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymeFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymeFit/Pods-GymeFit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				2124AA7E1F8A842200068410 /* CommodityViewController.swift */,
 				2124AA801F8A842200068410 /* FitnessCourseViewController.swift */,
 				2124AA851F8A842200068410 /* GymeFitLoginViewController.swift */,
+				BC8803CB1F90893700CD83EA /* SignInAuth.swift */,
 				2124AA7F1F8A842200068410 /* LoginViewController.swift */,
 				2124AA811F8A842200068410 /* MainViewController.swift */,
 				2124AA831F8A842200068410 /* MemberInfoViewController.swift */,
@@ -187,7 +190,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GymeFit/Pods-GymeFit-resources.sh",
-				"${PODS_ROOT}/google-plus-ios/GooglePlus.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -213,6 +216,9 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -224,6 +230,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -260,6 +269,7 @@
 				2124AA8C1F8A842300068410 /* MemberInfoViewController.swift in Sources */,
 				2124AA891F8A842300068410 /* FitnessCourseViewController.swift in Sources */,
 				2124AA881F8A842300068410 /* LoginViewController.swift in Sources */,
+				BC8803CC1F90893700CD83EA /* SignInAuth.swift in Sources */,
 				2124AA871F8A842300068410 /* CommodityViewController.swift in Sources */,
 				2124AA8D1F8A842300068410 /* TrainingManageViewController.swift in Sources */,
 				21C0EC591F89E74E007CBF01 /* AppDelegate.swift in Sources */,

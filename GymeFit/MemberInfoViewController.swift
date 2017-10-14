@@ -58,10 +58,8 @@ class MemberInfoViewController: UIViewController {
     }
     
     @IBAction func memberLogout(_ sender: Any) {
-        if(FBSDKAccessToken.current() != nil){
             let loginManager = FBSDKLoginManager()
             loginManager.logOut()
-        }
         
         self.performSegue(withIdentifier: "toLoginMenu", sender: self)
     }

@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GoogleSignIn
+import Google
 
 struct UserInfo {
     var firstName: String?
@@ -24,7 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         sleep(1)
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         return true
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var fbLoginButton: UIButton!

@@ -9,6 +9,7 @@ target 'GymeFit' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare', :git => 'https://github.com/1amageek/facebook-sdk-swift'
-  pod 'google-plus-ios', '~> 1.7'
+  pod 'GoogleSignIn', '~> 4.1'
+  pod 'Google'
   pod 'CVCalendar', '~> 1.6'
 end

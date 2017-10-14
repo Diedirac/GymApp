@@ -16,10 +16,10 @@ class TrainingManageViewController: UIViewController {
     @IBOutlet weak var calendarItem: UINavigationItem!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
+    @IBOutlet weak var trainingManageScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 1.0, green: 0.4, blue: 0.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.calendarBar.tintColor = UIColor.lightGray
@@ -33,7 +33,6 @@ class TrainingManageViewController: UIViewController {
         self.calendarItem.title = CVDate(date: Date(), calendar: currentCalendar).globalDescription
         self.menuView.menuViewDelegate = self
         self.calendarView.calendarDelegate = self
-        // Do any additional setup after loading the view.
     }
     
     @objc private func todayButtonTapped() {
